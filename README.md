@@ -1,1 +1,0 @@
-# paradigmas_2015
