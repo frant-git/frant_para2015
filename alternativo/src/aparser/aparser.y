@@ -22,9 +22,28 @@
  char *aname;
 %}
 
-/* COMPLETAR AQUI */
+%union {
+  int v;
+}
+
+/*--Tokens (agregado)--*/
+%token <v> TK_PROP
+%token <v> TK_TRUE
+%token <v> TK_FALSE
+%token TK_TWODOTS
+%token TK_SEPARATOR
 
 %%
+input: asgmnt
+
+asgmnt:  vval
+       | vval TK_SEPARATOR asgmnt 
+;
+vval: prop TK_TWODOTS booler
+;
+prop: TK_PROP
+;
+booler: TK_TRUE | TK_FALSE
 
 
 
